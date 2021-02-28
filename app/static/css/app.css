@@ -1,3 +1,28 @@
 body {
     padding-top: 5rem;
 }
+#ronly{border-left: 1px solid rgb(120, 121, 120);}
+#lr{border-left: 1px solid rgb(120, 121, 120);}
+nav #xx{color: White;background-color: black !important; }
+
+#msgid{width: 500px; height: 100px;}
+
+.form-control{width: 350px;height: 40px;}
+
+.subbtn{border: 1px solid #007bff; color: white; background-color: #007bff;
+border-radius: 5px;width: 90px;height: 35px;}
+
+.labels{
+    font-weight:500;
+}
+
+#errors{
+    color:rgb(255, 13, 13);
+    font-weight: 500;
+    background-color: white;
+    width: 450px;
+}
+#good{
+    color:rgb(0, 197, 0);
+    font-weight: 500;
+}

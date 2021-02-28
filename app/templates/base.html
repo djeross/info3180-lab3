@@ -20,6 +20,19 @@
     <header>
         {% include "header.html" %}
     </header>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+<ul class="flashes">
+        {% if messages[0]=='success' %}
+          <li id="good" class="{{ category }}">{{ message}}</li>
+        {% else %}
+          {% for category, message in messages %}
+            <li id="errors" class="{{ category }}">{{ message}}</li>
+          {% endfor %}
+        {% endif %}
+      {% endif %}
+    {% endwith %}
+</ul>
     <main>
         <div class="container">
             {% block main %}{% endblock %}

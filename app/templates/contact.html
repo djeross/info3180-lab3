@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+{% block css %}
+<style type="text/css">
+    body{background-image: url({{ url_for('static', filename='/images/back.jpg')}});  background-size: cover;}
+</style>
+{% endblock %}
+
+{% block main %}
+<h1>Contact Form</h1>
+<hr>
+<div>
+    <form method="post" action="{{ url_for('contact') }}">
+        {{ form.csrf_token }}
+        <div class="form-group">
+            {{ form.name.label(class="labels") }} {{ form.name(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.email.label(class="labels") }} {{ form.email(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.subject.label(class="labels") }} {{ form.subject(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{form.msg.label(class="labels")}} {{form.msg(class="form-control", id="msgid")}}
+        </div>
+        <button type="submit" class="subbtn">Send</button>
+    </form>
+</div>
+{% endblock %}
+
